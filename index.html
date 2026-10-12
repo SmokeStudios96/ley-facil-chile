@@ -27,21 +27,9 @@
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased h-full flex flex-col overflow-hidden">
 
-  <!-- ================= TOP AD BANNER ================= -->
-  <header class="w-full bg-slate-200 border-b border-slate-300 py-1.5 px-4 text-center flex-shrink-0">
-    <div class="max-w-4xl mx-auto flex items-center justify-between bg-white border border-dashed border-slate-400 rounded-lg p-2 shadow-sm text-xs text-slate-500">
-      <div class="flex items-center gap-2">
-        <span class="bg-slate-200 text-slate-700 font-semibold px-2 py-0.5 rounded text-[10px] tracking-wider uppercase">Publicidad</span>
-        <span class="hidden sm:inline">Auspiciado por Empresas y Servicios Ciudadanos</span>
-      </div>
-      <span class="font-medium text-slate-600 truncate max-w-xs sm:max-w-md">Banner Display (728x90) — Los anuncios financian este servicio gratuito</span>
-      <span class="text-blue-600 hover:underline cursor-pointer hidden md:inline">Anuncia aquí</span>
-    </div>
-  </header>
-
   <!-- ================= NAVBAR ================= -->
   <nav class="bg-chile-navy border-b border-slate-800 shadow-md flex-shrink-0">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between">
+    <div class="w-full px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between">
       <div class="flex items-center gap-3">
         <div class="w-9 h-9 rounded-xl bg-blue-600 text-white flex items-center justify-center shadow-lg shadow-blue-500/30">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -49,47 +37,42 @@
           </svg>
         </div>
         <div>
-          <a href="#" class="text-lg font-extrabold tracking-tight text-white flex items-center gap-1.5">
+          <a href="#" class="text-xl font-extrabold tracking-tight text-white flex items-center gap-1.5">
             Ley Fácil <span class="text-blue-400">Ciudadana</span>
           </a>
-        </div>
-      </div>
-      <div class="flex items-center gap-3">
-        <div class="hidden sm:flex items-center gap-2 bg-emerald-950/70 text-emerald-300 border border-emerald-600/40 text-xs font-semibold px-3 py-1 rounded-full">
-          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-          100% Gratuito y Libre de Costos
         </div>
       </div>
     </div>
   </nav>
 
-  <!-- ================= HERO COMPACTO ================= -->
-  <section class="bg-gradient-to-b from-chile-navy via-slate-900 to-slate-900 text-white py-4 px-4 flex-shrink-0">
+  <!-- ================= HERO COMPACTO (SUBIDO DE POSICIÓN) ================= -->
+  <section class="bg-gradient-to-b from-chile-navy via-slate-900 to-slate-900 text-white pt-2 pb-3.5 px-4 flex-shrink-0">
     <div class="max-w-4xl mx-auto text-center">
       <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight leading-tight">
-        Entiende tus derechos legales en Chile <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-300">en peras y manzanas.</span>
+        Entiende tus derechos legales en Chile <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-300">con peras y manzanas.</span>
       </h1>
-      <!-- Consultas rápidas -->
-      <div class="mt-3 text-left max-w-3xl mx-auto">
-        <div class="flex flex-wrap gap-2 justify-center">
-          <button onclick="handleQuickQuestion('despido')" class="bg-slate-800 hover:bg-blue-900/60 border border-slate-700 hover:border-blue-500 text-[11px] text-slate-200 px-3 py-1.5 rounded-lg transition flex items-center gap-1 shadow-sm">
-            💼 <span>Despido y finiquito</span>
+      
+      <!-- Consultas rápidas (+25% más grandes) -->
+      <div class="mt-2.5 max-w-4xl mx-auto">
+        <div class="flex flex-wrap gap-2.5 justify-center">
+          <button onclick="handleQuickQuestion('despido')" class="bg-slate-800 hover:bg-blue-900/70 border border-slate-700 hover:border-blue-400 text-xs sm:text-sm text-slate-100 px-4 py-2 rounded-xl transition flex items-center gap-2 shadow-sm font-medium">
+            <span class="text-base">💼</span> <span>Despido y finiquito</span>
           </button>
-          <button onclick="handleQuickQuestion('arriendo')" class="bg-slate-800 hover:bg-blue-900/60 border border-slate-700 hover:border-blue-500 text-[11px] text-slate-200 px-3 py-1.5 rounded-lg transition flex items-center gap-1 shadow-sm">
-            🏠 <span>Mes de garantía</span>
+          <button onclick="handleQuickQuestion('arriendo')" class="bg-slate-800 hover:bg-blue-900/70 border border-slate-700 hover:border-blue-400 text-xs sm:text-sm text-slate-100 px-4 py-2 rounded-xl transition flex items-center gap-2 shadow-sm font-medium">
+            <span class="text-base">🏠</span> <span>Mes de garantía</span>
           </button>
-          <button onclick="handleQuickQuestion('pension')" class="bg-slate-800 hover:bg-blue-900/60 border border-slate-700 hover:border-blue-500 text-[11px] text-slate-200 px-3 py-1.5 rounded-lg transition flex items-center gap-1 shadow-sm">
-            👶 <span>Pensión de alimentos</span>
+          <button onclick="handleQuickQuestion('pension')" class="bg-slate-800 hover:bg-blue-900/70 border border-slate-700 hover:border-blue-400 text-xs sm:text-sm text-slate-100 px-4 py-2 rounded-xl transition flex items-center gap-2 shadow-sm font-medium">
+            <span class="text-base">👶</span> <span>Pensión de alimentos</span>
           </button>
-          <button onclick="handleQuickQuestion('sernac')" class="bg-slate-800 hover:bg-blue-900/60 border border-slate-700 hover:border-blue-500 text-[11px] text-slate-200 px-3 py-1.5 rounded-lg transition flex items-center gap-1 shadow-sm">
-            🛍️ <span>Garantía SERNAC</span>
+          <button onclick="handleQuickQuestion('sernac')" class="bg-slate-800 hover:bg-blue-900/70 border border-slate-700 hover:border-blue-400 text-xs sm:text-sm text-slate-100 px-4 py-2 rounded-xl transition flex items-center gap-2 shadow-sm font-medium">
+            <span class="text-base">🛍️</span> <span>Garantía SERNAC</span>
           </button>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ================= CHAT & ADS CONTAINER (FLEXIBLE) ================= -->
+  <!-- ================= CHAT & SIDEBAR ================= -->
   <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 w-full overflow-hidden">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start h-full">
       
@@ -145,26 +128,37 @@
         </form>
       </div>
 
-      <!-- SIDEBAR PUBLICITARIO COMPACTO -->
-      <aside class="hidden lg:flex lg:col-span-4 flex-col space-y-4 h-full">
-        <div class="bg-white border border-slate-300 rounded-2xl p-4 shadow-sm text-center relative overflow-hidden flex-shrink-0">
-          <div class="text-[9px] uppercase font-bold text-slate-400 tracking-wider mb-1.5">Espacio Publicitario</div>
-          <div class="bg-gradient-to-br from-blue-50 to-slate-100 border-2 border-dashed border-blue-200 rounded-xl p-4 flex flex-col items-center justify-center">
-            <h4 class="font-bold text-slate-800 text-xs">Seguros & Servicios para el Hogar</h4>
-            <p class="text-[11px] text-slate-500 mt-0.5 mb-2">Protege a tu familia ante contingencias.</p>
-            <span class="text-[11px] bg-chile-navy text-white font-semibold px-3 py-1.5 rounded-lg cursor-pointer hover:bg-blue-700 transition">Ver Patrocinador</span>
-          </div>
-        </div>
-
-        <div class="bg-white border border-slate-200 rounded-2xl p-4 shadow-sm flex-grow">
-          <h3 class="text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-2.5 flex items-center gap-1.5">
-            <span class="w-2 h-2 rounded-full bg-blue-600"></span> Enlaces Oficiales
+      <!-- SIDEBAR: ENLACES OFICIALES (Alineado a la derecha, letra +33%) -->
+      <aside class="hidden lg:flex lg:col-span-4 flex-col justify-start h-full pl-2">
+        <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm w-full">
+          <h3 class="text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-600 mb-3.5 flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-blue-600"></span> Enlaces Oficiales
           </h3>
-          <ul class="text-[11px] space-y-2 text-slate-600 font-medium">
-            <li><a href="https://www.bcn.cl/leyfacil" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-1.5 rounded-lg hover:bg-slate-50 border border-slate-100 group transition"><span class="group-hover:text-blue-600">BCN — Ley Fácil</span><span>↗</span></a></li>
-            <li><a href="https://www.dt.gob.cl" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-1.5 rounded-lg hover:bg-slate-50 border border-slate-100 group transition"><span class="group-hover:text-blue-600">Dirección del Trabajo (DT)</span><span>↗</span></a></li>
-            <li><a href="https://www.sernac.cl" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-1.5 rounded-lg hover:bg-slate-50 border border-slate-100 group transition"><span class="group-hover:text-blue-600">SERNAC (Consumidor)</span><span>↗</span></a></li>
-            <li><a href="https://www.pjud.cl" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-1.5 rounded-lg hover:bg-slate-50 border border-slate-100 group transition"><span class="group-hover:text-blue-600">Poder Judicial (PJUD)</span><span>↗</span></a></li>
+          <ul class="text-xs sm:text-sm space-y-2.5 text-slate-700 font-semibold">
+            <li>
+              <a href="https://www.bcn.cl/leyfacil" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-2.5 rounded-xl hover:bg-blue-50 border border-slate-100 group transition">
+                <span class="group-hover:text-blue-600">BCN — Ley Fácil</span>
+                <span class="text-slate-400 group-hover:text-blue-600">↗</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.dt.gob.cl" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-2.5 rounded-xl hover:bg-blue-50 border border-slate-100 group transition">
+                <span class="group-hover:text-blue-600">Dirección del Trabajo (DT)</span>
+                <span class="text-slate-400 group-hover:text-blue-600">↗</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.sernac.cl" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-2.5 rounded-xl hover:bg-blue-50 border border-slate-100 group transition">
+                <span class="group-hover:text-blue-600">SERNAC (Consumidor)</span>
+                <span class="text-slate-400 group-hover:text-blue-600">↗</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.pjud.cl" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-2.5 rounded-xl hover:bg-blue-50 border border-slate-100 group transition">
+                <span class="group-hover:text-blue-600">Poder Judicial (PJUD)</span>
+                <span class="text-slate-400 group-hover:text-blue-600">↗</span>
+              </a>
+            </li>
           </ul>
         </div>
       </aside>
