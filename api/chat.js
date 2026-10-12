@@ -58,7 +58,7 @@ ${contextoLeyes || "No hay artículos exactos en la base de datos; responde con 
 
     // 3. Consulta a Gemini con modelo y prompt explícitos
     const response = await ai.models.generateContent({
-      model: 'gemini-2.5-flash',
+      model: 'gemini-3.5-flash',
       contents: message,
       config: {
         systemInstruction: systemInstruction,
