@@ -5,6 +5,7 @@
   "private": true,
   "dependencies": {
     "@google/genai": "^2.27.0",
-    "@supabase/supabase-js": "^2.39.0"
+    "@supabase/supabase-js": "^2.39.0",
+    "fast-xml-parser": "^5.11.2"
   }
 }
