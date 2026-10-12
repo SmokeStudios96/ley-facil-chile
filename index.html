@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es-CL" class="h-full">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ley Fácil Ciudadana | Tus derechos en Chile explicados en simple</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Fuente Google Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Estilos personalizados -->
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] },
+          colors: {
+            chile: { navy: '#0A2540', blue: '#005CE6', light: '#F4F7FB', red: '#D92D20', accent: '#E0F2FE' }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased h-full flex flex-col overflow-hidden">
+
+  <!-- ================= TOP AD BANNER ================= -->
+  <header class="w-full bg-slate-200 border-b border-slate-300 py-1.5 px-4 text-center flex-shrink-0">
+    <div class="max-w-4xl mx-auto flex items-center justify-between bg-white border border-dashed border-slate-400 rounded-lg p-2 shadow-sm text-xs text-slate-500">
+      <div class="flex items-center gap-2">
+        <span class="bg-slate-200 text-slate-700 font-semibold px-2 py-0.5 rounded text-[10px] tracking-wider uppercase">Publicidad</span>
+        <span class="hidden sm:inline">Auspiciado por Empresas y Servicios Ciudadanos</span>
+      </div>
+      <span class="font-medium text-slate-600 truncate max-w-xs sm:max-w-md">Banner Display (728x90) — Los anuncios financian este servicio gratuito</span>
+      <span class="text-blue-600 hover:underline cursor-pointer hidden md:inline">Anuncia aquí</span>
+    </div>
+  </header>
+
+  <!-- ================= NAVBAR ================= -->
+  <nav class="bg-chile-navy border-b border-slate-800 shadow-md flex-shrink-0">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-xl bg-blue-600 text-white flex items-center justify-center shadow-lg shadow-blue-500/30">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/>
+          </svg>
+        </div>
+        <div>
+          <a href="#" class="text-lg font-extrabold tracking-tight text-white flex items-center gap-1.5">
+            Ley Fácil <span class="text-blue-400">Ciudadana</span>
+          </a>
+        </div>
+      </div>
+      <div class="flex items-center gap-3">
+        <div class="hidden sm:flex items-center gap-2 bg-emerald-950/70 text-emerald-300 border border-emerald-600/40 text-xs font-semibold px-3 py-1 rounded-full">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+          100% Gratuito y Libre de Costos
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ================= HERO COMPACTO ================= -->
+  <section class="bg-gradient-to-b from-chile-navy via-slate-900 to-slate-900 text-white py-4 px-4 flex-shrink-0">
+    <div class="max-w-4xl mx-auto text-center">
+      <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight leading-tight">
+        Entiende tus derechos legales en Chile <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-300">en peras y manzanas.</span>
+      </h1>
+      <!-- Consultas rápidas -->
+      <div class="mt-3 text-left max-w-3xl mx-auto">
+        <div class="flex flex-wrap gap-2 justify-center">
+          <button onclick="handleQuickQuestion('despido')" class="bg-slate-800 hover:bg-blue-900/60 border border-slate-700 hover:border-blue-500 text-[11px] text-slate-200 px-3 py-1.5 rounded-lg transition flex items-center gap-1 shadow-sm">
+            💼 <span>Despido y finiquito</span>
+          </button>
+          <button onclick="handleQuickQuestion('arriendo')" class="bg-slate-800 hover:bg-blue-900/60 border border-slate-700 hover:border-blue-500 text-[11px] text-slate-200 px-3 py-1.5 rounded-lg transition flex items-center gap-1 shadow-sm">
+            🏠 <span>Mes de garantía</span>
+          </button>
+          <button onclick="handleQuickQuestion('pension')" class="bg-slate-800 hover:bg-blue-900/60 border border-slate-700 hover:border-blue-500 text-[11px] text-slate-200 px-3 py-1.5 rounded-lg transition flex items-center gap-1 shadow-sm">
+            👶 <span>Pensión de alimentos</span>
+          </button>
+          <button onclick="handleQuickQuestion('sernac')" class="bg-slate-800 hover:bg-blue-900/60 border border-slate-700 hover:border-blue-500 text-[11px] text-slate-200 px-3 py-1.5 rounded-lg transition flex items-center gap-1 shadow-sm">
+            🛍️ <span>Garantía SERNAC</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CHAT & ADS CONTAINER (FLEXIBLE) ================= -->
+  <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 w-full overflow-hidden">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start h-full">
+      
+      <!-- CHAT INTERACTIVO -->
+      <div class="lg:col-span-8 bg-white rounded-2xl shadow-xl border border-slate-200 flex flex-col overflow-hidden h-full">
+        
+        <!-- Header Chat -->
+        <div class="bg-slate-900 text-white px-4 py-3 flex items-center justify-between border-b border-slate-800 flex-shrink-0">
+          <div class="flex items-center gap-2.5">
+            <div class="relative">
+              <div class="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center font-bold text-white text-xs">⚖️</div>
+              <span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-emerald-500 border-2 border-slate-900 rounded-full"></span>
+            </div>
+            <div>
+              <h2 class="text-xs sm:text-sm font-bold leading-tight">Asistente Ley Fácil</h2>
+              <p class="text-[10px] text-slate-400">Orientación jurídica conectada a Supabase</p>
+            </div>
+          </div>
+          <button onclick="resetChat()" title="Reiniciar chat" class="text-xs text-slate-400 hover:text-white px-2 py-1 rounded hover:bg-slate-800 transition">
+            Limpiar Chat
+          </button>
+        </div>
+
+        <!-- Mensajes del Chat -->
+        <div id="chatMessages" class="flex-1 overflow-y-auto p-4 space-y-3 bg-slate-50/70">
+          <div class="flex gap-3 max-w-[90%] sm:max-w-[85%]">
+            <div class="w-7 h-7 rounded-full bg-blue-600 text-white flex-shrink-0 flex items-center justify-center text-xs font-bold shadow-sm">LF</div>
+            <div class="bg-white border border-slate-200 rounded-2xl rounded-tl-sm p-3.5 shadow-sm text-xs sm:text-sm text-slate-700 leading-relaxed break-words">
+              <p class="font-semibold text-slate-900 mb-1">¡Hola! Qué gusto saludarte.</p>
+              <p>Estoy conectado a la base legal de Chile para orientarte. Escríbeme tu duda laboral, de arriendo o del consumidor aquí abajo.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Formulario de Entrada -->
+        <form id="chatForm" onsubmit="handleUserSubmit(event)" class="p-3 bg-white border-t border-slate-200 flex-shrink-0">
+          <div class="flex gap-2">
+            <input 
+              type="text" 
+              id="userInput" 
+              placeholder="Escribe tu consulta aquí (ej: me despidieron sin aviso)..." 
+              class="flex-1 bg-slate-100 border border-slate-300 rounded-xl px-3.5 py-2.5 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-blue-600 focus:bg-white text-slate-800 transition"
+              autocomplete="off"
+              required
+            >
+            <button 
+              type="submit" 
+              id="sendBtn"
+              class="bg-blue-600 hover:bg-blue-700 text-white font-medium px-4 py-2.5 rounded-xl transition flex items-center gap-1 shadow-md text-xs sm:text-sm flex-shrink-0">
+              <span>Preguntar</span>
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- SIDEBAR PUBLICITARIO COMPACTO -->
+      <aside class="hidden lg:flex lg:col-span-4 flex-col space-y-4 h-full">
+        <div class="bg-white border border-slate-300 rounded-2xl p-4 shadow-sm text-center relative overflow-hidden flex-shrink-0">
+          <div class="text-[9px] uppercase font-bold text-slate-400 tracking-wider mb-1.5">Espacio Publicitario</div>
+          <div class="bg-gradient-to-br from-blue-50 to-slate-100 border-2 border-dashed border-blue-200 rounded-xl p-4 flex flex-col items-center justify-center">
+            <h4 class="font-bold text-slate-800 text-xs">Seguros & Servicios para el Hogar</h4>
+            <p class="text-[11px] text-slate-500 mt-0.5 mb-2">Protege a tu familia ante contingencias.</p>
+            <span class="text-[11px] bg-chile-navy text-white font-semibold px-3 py-1.5 rounded-lg cursor-pointer hover:bg-blue-700 transition">Ver Patrocinador</span>
+          </div>
+        </div>
+
+        <div class="bg-white border border-slate-200 rounded-2xl p-4 shadow-sm flex-grow">
+          <h3 class="text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-2.5 flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-blue-600"></span> Enlaces Oficiales
+          </h3>
+          <ul class="text-[11px] space-y-2 text-slate-600 font-medium">
+            <li><a href="https://www.bcn.cl/leyfacil" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-1.5 rounded-lg hover:bg-slate-50 border border-slate-100 group transition"><span class="group-hover:text-blue-600">BCN — Ley Fácil</span><span>↗</span></a></li>
+            <li><a href="https://www.dt.gob.cl" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-1.5 rounded-lg hover:bg-slate-50 border border-slate-100 group transition"><span class="group-hover:text-blue-600">Dirección del Trabajo (DT)</span><span>↗</span></a></li>
+            <li><a href="https://www.sernac.cl" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-1.5 rounded-lg hover:bg-slate-50 border border-slate-100 group transition"><span class="group-hover:text-blue-600">SERNAC (Consumidor)</span><span>↗</span></a></li>
+            <li><a href="https://www.pjud.cl" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-1.5 rounded-lg hover:bg-slate-50 border border-slate-100 group transition"><span class="group-hover:text-blue-600">Poder Judicial (PJUD)</span><span>↗</span></a></li>
+          </ul>
+        </div>
+      </aside>
+
+    </div>
+  </main>
+
+  <!-- Script principal de la aplicación -->
+  <script src="script.js"></script>
+</body>
+</html>
