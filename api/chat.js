@@ -22,10 +22,10 @@ export default async function handler(req, res) {
   }
 
   try {
-    // 1. Buscar leyes de apoyo en Supabase según palabras clave
-    const palabras = message.trim().split(/\s+/).filter(w => w.length > 3).join(' | ');
-    
+    // 1. Buscar en Supabase
     let contextoLeyes = "";
+    const palabras = message.trim().split(/\s+/).filter(w => w.length > 3).join(' | ');
+
     if (palabras.length > 0) {
       const { data: articulos } = await supabase
         .from('leyes_chile')
@@ -40,7 +40,7 @@ export default async function handler(req, res) {
       }
     }
 
-    // 2. Directriz de personalidad ciudadana para Gemini
+    // 2. Instrucciones para Gemini
     const systemInstruction = `
 Eres un asistente legal ciudadano para Chile llamado "Ley Fácil".
 Tu objetivo: Traducir conceptos jurídicos chilenos a un lenguaje simple, cercano y directo ("en peras y manzanas").
@@ -56,7 +56,7 @@ Información de apoyo disponible en la base de datos chilena:
 ${contextoLeyes || "No hay artículos exactos en la base de datos; responde con la legislación vigente en Chile."}
 `;
 
-    // 3. Consulta a Gemini 2.5 Flash
+    // 3. Consulta a Gemini con modelo y prompt explícitos
     const response = await ai.models.generateContent({
       model: 'gemini-2.5-flash',
       contents: message,
@@ -71,6 +71,6 @@ ${contextoLeyes || "No hay artículos exactos en la base de datos; responde con 
 
   } catch (error) {
     console.error("Error en API Gemini:", error);
-    return res.status(500).json({ error: "Ocurrió un error al procesar tu consulta con Gemini." });
+    return res.status(500).json({ error: error.message || "Error al procesar consulta." });
   }
 }
