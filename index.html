@@ -27,17 +27,17 @@
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased h-full flex flex-col overflow-hidden">
 
-  <!-- ================= NAVBAR ================= -->
+  <!-- ================= NAVBAR COMPACTO ================= -->
   <nav class="bg-chile-navy border-b border-slate-800 shadow-md flex-shrink-0">
-    <div class="w-full px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between">
-      <div class="flex items-center gap-3">
-        <div class="w-9 h-9 rounded-xl bg-blue-600 text-white flex items-center justify-center shadow-lg shadow-blue-500/30">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <div class="w-full px-4 sm:px-6 lg:px-8 h-11 flex items-center justify-between">
+      <div class="flex items-center gap-2.5">
+        <div class="w-7 h-7 rounded-lg bg-blue-600 text-white flex items-center justify-center shadow-md shadow-blue-500/30">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/>
           </svg>
         </div>
         <div>
-          <a href="#" class="text-xl font-extrabold tracking-tight text-white flex items-center gap-1.5">
+          <a href="#" class="text-lg font-extrabold tracking-tight text-white flex items-center gap-1.5">
             Ley Fácil <span class="text-blue-400">Ciudadana</span>
           </a>
         </div>
@@ -45,26 +45,26 @@
     </div>
   </nav>
 
-  <!-- ================= HERO COMPACTO (SUBIDO DE POSICIÓN) ================= -->
-  <section class="bg-gradient-to-b from-chile-navy via-slate-900 to-slate-900 text-white pt-2 pb-3.5 px-4 flex-shrink-0">
+  <!-- ================= HERO ELEVADO (~2 CM MÁS ARRIBA) ================= -->
+  <section class="bg-gradient-to-b from-chile-navy via-slate-900 to-slate-900 text-white pt-0 pb-2.5 px-4 flex-shrink-0">
     <div class="max-w-4xl mx-auto text-center">
-      <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight leading-tight">
+      <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight leading-tight pt-1">
         Entiende tus derechos legales en Chile <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-300">con peras y manzanas.</span>
       </h1>
       
-      <!-- Consultas rápidas (+25% más grandes) -->
-      <div class="mt-2.5 max-w-4xl mx-auto">
+      <!-- Consultas rápidas -->
+      <div class="mt-2 max-w-4xl mx-auto">
         <div class="flex flex-wrap gap-2.5 justify-center">
-          <button onclick="handleQuickQuestion('despido')" class="bg-slate-800 hover:bg-blue-900/70 border border-slate-700 hover:border-blue-400 text-xs sm:text-sm text-slate-100 px-4 py-2 rounded-xl transition flex items-center gap-2 shadow-sm font-medium">
+          <button onclick="handleQuickQuestion('despido')" class="bg-slate-800 hover:bg-blue-900/70 border border-slate-700 hover:border-blue-400 text-xs sm:text-sm text-slate-100 px-4 py-1.5 rounded-xl transition flex items-center gap-2 shadow-sm font-medium">
             <span class="text-base">💼</span> <span>Despido y finiquito</span>
           </button>
-          <button onclick="handleQuickQuestion('arriendo')" class="bg-slate-800 hover:bg-blue-900/70 border border-slate-700 hover:border-blue-400 text-xs sm:text-sm text-slate-100 px-4 py-2 rounded-xl transition flex items-center gap-2 shadow-sm font-medium">
+          <button onclick="handleQuickQuestion('arriendo')" class="bg-slate-800 hover:bg-blue-900/70 border border-slate-700 hover:border-blue-400 text-xs sm:text-sm text-slate-100 px-4 py-1.5 rounded-xl transition flex items-center gap-2 shadow-sm font-medium">
             <span class="text-base">🏠</span> <span>Mes de garantía</span>
           </button>
-          <button onclick="handleQuickQuestion('pension')" class="bg-slate-800 hover:bg-blue-900/70 border border-slate-700 hover:border-blue-400 text-xs sm:text-sm text-slate-100 px-4 py-2 rounded-xl transition flex items-center gap-2 shadow-sm font-medium">
+          <button onclick="handleQuickQuestion('pension')" class="bg-slate-800 hover:bg-blue-900/70 border border-slate-700 hover:border-blue-400 text-xs sm:text-sm text-slate-100 px-4 py-1.5 rounded-xl transition flex items-center gap-2 shadow-sm font-medium">
             <span class="text-base">👶</span> <span>Pensión de alimentos</span>
           </button>
-          <button onclick="handleQuickQuestion('sernac')" class="bg-slate-800 hover:bg-blue-900/70 border border-slate-700 hover:border-blue-400 text-xs sm:text-sm text-slate-100 px-4 py-2 rounded-xl transition flex items-center gap-2 shadow-sm font-medium">
+          <button onclick="handleQuickQuestion('sernac')" class="bg-slate-800 hover:bg-blue-900/70 border border-slate-700 hover:border-blue-400 text-xs sm:text-sm text-slate-100 px-4 py-1.5 rounded-xl transition flex items-center gap-2 shadow-sm font-medium">
             <span class="text-base">🛍️</span> <span>Garantía SERNAC</span>
           </button>
         </div>
@@ -72,8 +72,8 @@
     </div>
   </section>
 
-  <!-- ================= CHAT & SIDEBAR ================= -->
-  <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 w-full overflow-hidden">
+  <!-- ================= CHAT & SIDEBAR DESPLAZADO A LA DERECHA ================= -->
+  <main class="flex-grow w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 py-3.5 overflow-hidden">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start h-full">
       
       <!-- CHAT INTERACTIVO -->
@@ -128,8 +128,8 @@
         </form>
       </div>
 
-      <!-- SIDEBAR: ENLACES OFICIALES (Alineado a la derecha, letra +33%) -->
-      <aside class="hidden lg:flex lg:col-span-4 flex-col justify-start h-full pl-2">
+      <!-- SIDEBAR: ENLACES OFICIALES (DESPLAZADO HACIA LA DERECHA) -->
+      <aside class="hidden lg:flex lg:col-span-4 flex-col justify-start h-full lg:pl-6">
         <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm w-full">
           <h3 class="text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-600 mb-3.5 flex items-center gap-2">
             <span class="w-2.5 h-2.5 rounded-full bg-blue-600"></span> Enlaces Oficiales
