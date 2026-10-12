@@ -1,13 +1,13 @@
 import { createClient } from '@supabase/supabase-js';
-import OpenAI from 'openai';
+import { GoogleGenAI } from '@google/genai';
 
 const supabase = createClient(
   process.env.SUPABASE_URL,
   process.env.SUPABASE_ANON_KEY
 );
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY
+const ai = new GoogleGenAI({
+  apiKey: process.env.GEMINI_API_KEY
 });
 
 export default async function handler(req, res) {
@@ -22,7 +22,7 @@ export default async function handler(req, res) {
   }
 
   try {
-    // 1. Buscar leyes o guías en Supabase según palabras clave
+    // 1. Buscar leyes de apoyo en Supabase según palabras clave
     const palabras = message.trim().split(/\s+/).filter(w => w.length > 3).join(' | ');
     
     let contextoLeyes = "";
@@ -40,11 +40,11 @@ export default async function handler(req, res) {
       }
     }
 
-    // 2. Prompt del sistema orientado a lenguaje ciudadano chileno
-    const systemPrompt = `
+    // 2. Directriz de personalidad ciudadana para Gemini
+    const systemInstruction = `
 Eres un asistente legal ciudadano para Chile llamado "Ley Fácil".
-Tu objetivo: Traducir conceptos jurídicos a un lenguaje simple, cercano y directo ("en peras y manzanas").
-Público: Personas que no saben de leyes o que tienen dudas con lo que les dijo un abogado.
+Tu objetivo: Traducir conceptos jurídicos chilenos a un lenguaje simple, cercano y directo ("en peras y manzanas").
+Público objetivo: Personas que no saben de leyes o que tienen dudas con lo que les dijo su abogado.
 
 Reglas obligatorias:
 1. Explica sin tecnicismos innecesarios. Si usas un término legal, tradúcelo de inmediato.
@@ -52,25 +52,25 @@ Reglas obligatorias:
 3. Si aplica despido, recuerda siempre la 'Reserva de Derechos' en el finiquito.
 4. Recuerda de forma sutil que esto es una orientación educativa y no sustituye el patrocinio de un abogado formal.
 
-Información de apoyo disponible en la base de datos:
-${contextoLeyes || "No hay artículos exactos en la base de datos, usa la legislación vigente en Chile."}
+Información de apoyo disponible en la base de datos chilena:
+${contextoLeyes || "No hay artículos exactos en la base de datos; responde con la legislación vigente en Chile."}
 `;
 
-    // 3. Consulta al modelo LLM
-    const completion = await openai.chat.completions.create({
-      model: "gpt-4o-mini", // Rápido y muy económico
-      messages: [
-        { role: "system", content: systemPrompt },
-        { role: "user", content: message }
-      ],
-      temperature: 0.3
+    // 3. Consulta a Gemini 2.5 Flash
+    const response = await ai.models.generateContent({
+      model: 'gemini-2.5-flash',
+      contents: message,
+      config: {
+        systemInstruction: systemInstruction,
+        temperature: 0.3
+      }
     });
 
-    const reply = completion.choices[0].message.content;
+    const reply = response.text;
     return res.status(200).json({ reply });
 
   } catch (error) {
-    console.error("Error en API:", error);
-    return res.status(500).json({ error: "Ocurrió un error al procesar tu consulta." });
+    console.error("Error en API Gemini:", error);
+    return res.status(500).json({ error: "Ocurrió un error al procesar tu consulta con Gemini." });
   }
 }
