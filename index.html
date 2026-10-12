@@ -73,12 +73,12 @@
     </div>
   </section>
 
-  <!-- ================= CHAT EXPANDIDO & ENLACES BAJADOS ================= -->
+  <!-- ================= CHAT EXPANDIDO & ENLACES COMPACTOS ================= -->
   <main class="flex-grow w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 py-3.5 overflow-hidden">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-7 items-start h-full">
+    <div class="flex flex-col lg:flex-row gap-6 items-start h-full">
       
-      <!-- CHAT INTERACTIVO (AGRANDADO A 9 COLUMNAS) -->
-      <div class="lg:col-span-9 bg-white rounded-2xl shadow-xl border border-slate-200 flex flex-col overflow-hidden h-full">
+      <!-- CHAT INTERACTIVO (OCUPA CASI TODA LA PANTALLA) -->
+      <div class="flex-1 w-full bg-white rounded-2xl shadow-xl border border-slate-200 flex flex-col overflow-hidden h-full">
         
         <!-- Header Chat -->
         <div class="bg-slate-900 text-white px-4 py-3 flex items-center justify-between border-b border-slate-800 flex-shrink-0">
@@ -129,35 +129,35 @@
         </form>
       </div>
 
-      <!-- SIDEBAR: ENLACES OFICIALES (MÁS COMPACTO Y BAJADO ~5 CM) -->
-      <aside class="hidden lg:flex lg:col-span-3 flex-col justify-start h-full pt-20">
-        <div class="bg-white border border-slate-200 rounded-2xl p-4 shadow-sm w-full">
-          <h3 class="text-xs font-bold uppercase tracking-wider text-slate-600 mb-3 flex items-center gap-2">
-            <span class="w-2 rounded-full h-2 bg-blue-600"></span> Enlaces Oficiales
+      <!-- SIDEBAR: ENLACES OFICIALES (COMPACTO AL TAMAÑO DEL RECORTE Y PEGADO A LA DERECHA) -->
+      <aside class="hidden lg:flex flex-col flex-shrink-0 w-60 pt-20">
+        <div class="bg-white border border-slate-200 rounded-2xl p-3.5 shadow-sm w-full">
+          <h3 class="text-[11px] font-bold uppercase tracking-wider text-slate-600 mb-2.5 flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-blue-600"></span> Enlaces Oficiales
           </h3>
           <ul class="text-xs space-y-2 text-slate-700 font-semibold">
             <li>
-              <a href="https://www.bcn.cl/leyfacil" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-2 rounded-xl hover:bg-blue-50 border border-slate-100 group transition">
-                <span class="group-hover:text-blue-600 truncate">BCN — Ley Fácil</span>
-                <span class="text-slate-400 group-hover:text-blue-600 flex-shrink-0 ml-1">↗</span>
+              <a href="https://www.bcn.cl/leyfacil" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between py-2 px-3 rounded-xl hover:bg-blue-50/80 border border-slate-100 group transition">
+                <span class="group-hover:text-blue-600">BCN — Ley Fácil</span>
+                <span class="text-blue-500 text-xs font-bold ml-2">↗</span>
               </a>
             </li>
             <li>
-              <a href="https://www.dt.gob.cl" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-2 rounded-xl hover:bg-blue-50 border border-slate-100 group transition">
-                <span class="group-hover:text-blue-600 truncate">Dirección del Trabajo (DT)</span>
-                <span class="text-slate-400 group-hover:text-blue-600 flex-shrink-0 ml-1">↗</span>
+              <a href="https://www.dt.gob.cl" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between py-2 px-3 rounded-xl hover:bg-blue-50/80 border border-slate-100 group transition">
+                <span class="group-hover:text-blue-600">Dirección del Trabajo (DT)</span>
+                <span class="text-blue-500 text-xs font-bold ml-2">↗</span>
               </a>
             </li>
             <li>
-              <a href="https://www.sernac.cl" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-2 rounded-xl hover:bg-blue-50 border border-slate-100 group transition">
-                <span class="group-hover:text-blue-600 truncate">SERNAC (Consumidor)</span>
-                <span class="text-slate-400 group-hover:text-blue-600 flex-shrink-0 ml-1">↗</span>
+              <a href="https://www.sernac.cl" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between py-2 px-3 rounded-xl hover:bg-blue-50/80 border border-slate-100 group transition">
+                <span class="group-hover:text-blue-600">SERNAC (Consumidor)</span>
+                <span class="text-blue-500 text-xs font-bold ml-2">↗</span>
               </a>
             </li>
             <li>
-              <a href="https://www.pjud.cl" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-2 rounded-xl hover:bg-blue-50 border border-slate-100 group transition">
-                <span class="group-hover:text-blue-600 truncate">Poder Judicial (PJUD)</span>
-                <span class="text-slate-400 group-hover:text-blue-600 flex-shrink-0 ml-1">↗</span>
+              <a href="https://www.pjud.cl" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between py-2 px-3 rounded-xl hover:bg-blue-50/80 border border-slate-100 group transition">
+                <span class="group-hover:text-blue-600">Poder Judicial (PJUD)</span>
+                <span class="text-blue-500 text-xs font-bold ml-2">↗</span>
               </a>
             </li>
           </ul>
