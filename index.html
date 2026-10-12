@@ -27,7 +27,7 @@
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased h-full flex flex-col overflow-hidden">
 
-  <!-- ================= NAVBAR (LOGO CON MÁS AIRE Y BAJADO ~2 CM) ================= -->
+  <!-- ================= NAVBAR ================= -->
   <nav class="bg-chile-navy border-b border-slate-800 shadow-md flex-shrink-0">
     <div class="w-full px-6 sm:px-8 lg:px-10 h-14 flex items-center justify-between pt-1.5">
       <div class="flex items-center gap-3">
@@ -45,15 +45,15 @@
     </div>
   </nav>
 
-  <!-- ================= HERO (TÍTULO ARRIBA Y GRAN SEPARACIÓN HACIA ABAJO) ================= -->
+  <!-- ================= HERO ================= -->
   <section class="bg-gradient-to-b from-chile-navy via-slate-900 to-slate-900 text-white pt-1 pb-4 px-4 flex-shrink-0">
     <div class="max-w-4xl mx-auto text-center">
-      <!-- Título elevado -->
+      <!-- Título principal -->
       <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight leading-tight pt-0">
         Entiende tus derechos legales en Chile <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-300">con peras y manzanas</span>
       </h1>
       
-      <!-- Cajas de consulta con distancia amplia (mt-7 sm:mt-8) -->
+      <!-- Cajas de consulta rápida -->
       <div class="mt-7 sm:mt-8 max-w-4xl mx-auto">
         <div class="flex flex-wrap gap-3 justify-center">
           <button onclick="handleQuickQuestion('despido')" class="bg-slate-800/90 hover:bg-blue-900/70 border border-slate-700 hover:border-blue-400 text-xs sm:text-sm text-slate-100 px-4 py-2 rounded-xl transition flex items-center gap-2 shadow-sm font-medium">
@@ -73,12 +73,12 @@
     </div>
   </section>
 
-  <!-- ================= CHAT & SIDEBAR ================= -->
+  <!-- ================= CHAT EXPANDIDO & ENLACES BAJADOS ================= -->
   <main class="flex-grow w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 py-3.5 overflow-hidden">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start h-full">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-7 items-start h-full">
       
-      <!-- CHAT INTERACTIVO -->
-      <div class="lg:col-span-8 bg-white rounded-2xl shadow-xl border border-slate-200 flex flex-col overflow-hidden h-full">
+      <!-- CHAT INTERACTIVO (AGRANDADO A 9 COLUMNAS) -->
+      <div class="lg:col-span-9 bg-white rounded-2xl shadow-xl border border-slate-200 flex flex-col overflow-hidden h-full">
         
         <!-- Header Chat -->
         <div class="bg-slate-900 text-white px-4 py-3 flex items-center justify-between border-b border-slate-800 flex-shrink-0">
@@ -129,35 +129,35 @@
         </form>
       </div>
 
-      <!-- SIDEBAR: ENLACES OFICIALES -->
-      <aside class="hidden lg:flex lg:col-span-4 flex-col justify-start h-full lg:pl-6">
-        <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm w-full">
-          <h3 class="text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-600 mb-3.5 flex items-center gap-2">
-            <span class="w-2.5 h-2.5 rounded-full bg-blue-600"></span> Enlaces Oficiales
+      <!-- SIDEBAR: ENLACES OFICIALES (MÁS COMPACTO Y BAJADO ~5 CM) -->
+      <aside class="hidden lg:flex lg:col-span-3 flex-col justify-start h-full pt-20">
+        <div class="bg-white border border-slate-200 rounded-2xl p-4 shadow-sm w-full">
+          <h3 class="text-xs font-bold uppercase tracking-wider text-slate-600 mb-3 flex items-center gap-2">
+            <span class="w-2 rounded-full h-2 bg-blue-600"></span> Enlaces Oficiales
           </h3>
-          <ul class="text-xs sm:text-sm space-y-2.5 text-slate-700 font-semibold">
+          <ul class="text-xs space-y-2 text-slate-700 font-semibold">
             <li>
-              <a href="https://www.bcn.cl/leyfacil" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-2.5 rounded-xl hover:bg-blue-50 border border-slate-100 group transition">
-                <span class="group-hover:text-blue-600">BCN — Ley Fácil</span>
-                <span class="text-slate-400 group-hover:text-blue-600">↗</span>
+              <a href="https://www.bcn.cl/leyfacil" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-2 rounded-xl hover:bg-blue-50 border border-slate-100 group transition">
+                <span class="group-hover:text-blue-600 truncate">BCN — Ley Fácil</span>
+                <span class="text-slate-400 group-hover:text-blue-600 flex-shrink-0 ml-1">↗</span>
               </a>
             </li>
             <li>
-              <a href="https://www.dt.gob.cl" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-2.5 rounded-xl hover:bg-blue-50 border border-slate-100 group transition">
-                <span class="group-hover:text-blue-600">Dirección del Trabajo (DT)</span>
-                <span class="text-slate-400 group-hover:text-blue-600">↗</span>
+              <a href="https://www.dt.gob.cl" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-2 rounded-xl hover:bg-blue-50 border border-slate-100 group transition">
+                <span class="group-hover:text-blue-600 truncate">Dirección del Trabajo (DT)</span>
+                <span class="text-slate-400 group-hover:text-blue-600 flex-shrink-0 ml-1">↗</span>
               </a>
             </li>
             <li>
-              <a href="https://www.sernac.cl" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-2.5 rounded-xl hover:bg-blue-50 border border-slate-100 group transition">
-                <span class="group-hover:text-blue-600">SERNAC (Consumidor)</span>
-                <span class="text-slate-400 group-hover:text-blue-600">↗</span>
+              <a href="https://www.sernac.cl" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-2 rounded-xl hover:bg-blue-50 border border-slate-100 group transition">
+                <span class="group-hover:text-blue-600 truncate">SERNAC (Consumidor)</span>
+                <span class="text-slate-400 group-hover:text-blue-600 flex-shrink-0 ml-1">↗</span>
               </a>
             </li>
             <li>
-              <a href="https://www.pjud.cl" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-2.5 rounded-xl hover:bg-blue-50 border border-slate-100 group transition">
-                <span class="group-hover:text-blue-600">Poder Judicial (PJUD)</span>
-                <span class="text-slate-400 group-hover:text-blue-600">↗</span>
+              <a href="https://www.pjud.cl" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-2 rounded-xl hover:bg-blue-50 border border-slate-100 group transition">
+                <span class="group-hover:text-blue-600 truncate">Poder Judicial (PJUD)</span>
+                <span class="text-slate-400 group-hover:text-blue-600 flex-shrink-0 ml-1">↗</span>
               </a>
             </li>
           </ul>
