@@ -1,48 +1,44 @@
-// ==========================================
-// LEY FÁCIL CIUDADANA - SCRIPT PRINCIPAL
-// ==========================================
-
+// script.js
 const chatMessages = document.getElementById('chatMessages');
 const chatForm = document.getElementById('chatForm');
 const userInput = document.getElementById('userInput');
 const sendBtn = document.getElementById('sendBtn');
 
-// Función para convertir markdown simple (negritas y saltos de línea) a HTML seguro
+// Registro de Service Worker para PWA
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js').catch((err) => {
+      console.log('SW no registrado:', err);
+    });
+  });
+}
+
 function formatLegalText(rawText) {
   if (!rawText) return '';
-  
-  // Escapar caracteres peligrosos
   let safeText = rawText
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;');
-
-  // Convertir **texto** en <strong>texto</strong> (negrita)
-  safeText = safeText.replace(/\*\*(.*?)\*\*/g, '<strong class="text-slate-900 font-bold">$1</strong>');
-
-  // Convertir viñetas (* o - al inicio de línea)
-  safeText = safeText.replace(/^[\*\-]\s+(.*)$/gm, '• $1');
-
-  // Convertir saltos de línea a <br>
+  safeText = safeText.replace(/\*\*(.*?)\*\*/g, '<strong class="text-white font-bold">$1</strong>');
+  safeText = safeText.replace(/^[\*\-]\s+(.*)$/gm, '<span class="text-[#00df82]">✦</span> $1');
   return safeText.replace(/\n/g, '<br>');
 }
 
-// Función para agregar un globo de mensaje al chat
 function appendMessage(sender, text, isUser = false) {
   const wrapper = document.createElement('div');
-  wrapper.className = `flex gap-3 max-w-[90%] sm:max-w-[85%] ${isUser ? 'ml-auto flex-row-reverse' : ''}`;
+  wrapper.className = `flex gap-2.5 max-w-[92%] sm:max-w-[85%] ${isUser ? 'ml-auto flex-row-reverse' : ''}`;
 
   const avatar = document.createElement('div');
-  avatar.className = `w-7 h-7 rounded-full flex-shrink-0 flex items-center justify-center text-xs font-bold shadow-sm ${
-    isUser ? 'bg-slate-700 text-white' : 'bg-blue-600 text-white'
+  avatar.className = `w-7 h-7 rounded-lg flex-shrink-0 flex items-center justify-center text-xs font-mono font-bold ${
+    isUser ? 'bg-zinc-800 text-zinc-300' : 'bg-[#00df82] text-black shadow-[0_0_10px_rgba(0,223,130,0.2)]'
   }`;
   avatar.textContent = isUser ? 'Tú' : 'LF';
 
   const bubble = document.createElement('div');
-  bubble.className = `p-3.5 shadow-sm text-xs sm:text-sm leading-relaxed break-words rounded-2xl ${
+  bubble.className = `p-3.5 text-xs sm:text-sm leading-relaxed break-words rounded-2xl ${
     isUser 
-      ? 'bg-blue-600 text-white rounded-tr-sm' 
-      : 'bg-white border border-slate-200 text-slate-700 rounded-tl-sm'
+      ? 'bg-[#022116] border border-[#00df82]/40 text-white rounded-tr-sm' 
+      : 'bg-zinc-900 border border-zinc-800 text-zinc-200 rounded-tl-sm'
   }`;
   
   if (isUser) {
@@ -55,27 +51,23 @@ function appendMessage(sender, text, isUser = false) {
   wrapper.appendChild(bubble);
   chatMessages.appendChild(wrapper);
   
-  // Desplazar suavemente hasta el final
   chatMessages.scrollTo({
     top: chatMessages.scrollHeight,
     behavior: 'smooth'
   });
 }
 
-// Envío del formulario
 async function handleUserSubmit(event) {
   if (event) event.preventDefault();
   const query = userInput.value.trim();
   if (!query) return;
 
-  // 1. Mostrar consulta del usuario
   appendMessage('Usuario', query, true);
   userInput.value = '';
   userInput.disabled = true;
   sendBtn.disabled = true;
 
-  // 2. Indicador temporal de carga
-  appendMessage('Ley Fácil', 'Consultando la base legal y redactando la respuesta en peras y manzanas...', false);
+  appendMessage('Ley Fácil', 'Consultando el Código del Trabajo y la base legal chilena...', false);
   const loadingBubble = chatMessages.lastElementChild;
 
   try {
@@ -104,7 +96,6 @@ async function handleUserSubmit(event) {
   }
 }
 
-// Consultas rápidas (botones de la barra superior)
 function handleQuickQuestion(tema) {
   const preguntas = {
     despido: "¿Me pueden despedir por necesidades de la empresa si estoy con licencia médica?",
@@ -119,20 +110,18 @@ function handleQuickQuestion(tema) {
   }
 }
 
-// Limpiar historial de pantalla
 function resetChat() {
   chatMessages.innerHTML = `
-    <div class="flex gap-3 max-w-[90%] sm:max-w-[85%]">
-      <div class="w-7 h-7 rounded-full bg-blue-600 text-white flex-shrink-0 flex items-center justify-center text-xs font-bold shadow-sm">LF</div>
-      <div class="bg-white border border-slate-200 rounded-2xl rounded-tl-sm p-3.5 shadow-sm text-xs sm:text-sm text-slate-700 leading-relaxed break-words">
-        <p class="font-semibold text-slate-900 mb-1">¡Chat reiniciado!</p>
-        <p>¿Qué duda legal tienes hoy sobre trabajo, arriendo, compras o familia?</p>
+    <div class="flex gap-2.5 max-w-[92%] sm:max-w-[85%]">
+      <div class="w-7 h-7 rounded-lg bg-[#00df82] text-black font-bold flex-shrink-0 flex items-center justify-center text-xs shadow-sm">LF</div>
+      <div class="bg-zinc-900 border border-zinc-800 rounded-2xl rounded-tl-sm p-3.5 text-xs sm:text-sm text-zinc-200 leading-relaxed break-words">
+        <p class="font-bold text-white">¡Chat reiniciado!</p>
+        <p class="text-zinc-400">¿Qué duda legal tienes hoy sobre trabajo, arriendo, compras o familia?</p>
       </div>
     </div>
   `;
 }
 
-// Exponer funciones necesarias para los onclick de index.html
 window.handleUserSubmit = handleUserSubmit;
 window.handleQuickQuestion = handleQuickQuestion;
 window.resetChat = resetChat;

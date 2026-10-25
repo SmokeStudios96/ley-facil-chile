@@ -1,173 +1,186 @@
 <!DOCTYPE html>
-<html lang="es-CL" class="h-full">
+<html lang="es-CL" class="h-full dark">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ley Fácil Ciudadana | Tus derechos en Chile explicados en simple</title>
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Fuente Google Plus Jakarta Sans -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Ley Fácil | Asesoría Legal Ciudadana Chile</title>
+  
+  <!-- Configuración PWA & Android Google Play -->
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#000000">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="apple-touch-icon" href="/icons/icon-192.png">
+
+  <!-- Fuentes e iconos -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <!-- Estilos personalizados -->
-  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
+      darkMode: 'class',
       theme: {
         extend: {
-          fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] },
+          fontFamily: { sans: ['"Inter"', 'sans-serif'] },
           colors: {
-            chile: { navy: '#0A2540', blue: '#005CE6', light: '#F4F7FB', red: '#D92D20', accent: '#E0F2FE' }
+            brand: '#00df82',
+            darkBg: '#000000',
+            cardBg: '#09090b',
+            borderDark: '#18181b',
           }
         }
       }
     }
   </script>
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans antialiased h-full flex flex-col overflow-hidden">
+<body class="bg-black text-zinc-100 font-sans antialiased h-full flex flex-col overflow-hidden select-none">
 
-  <!-- ================= NAVBAR ================= -->
-  <nav class="bg-chile-navy border-b border-slate-800 shadow-md flex-shrink-0">
-    <div class="w-full px-6 sm:px-8 lg:px-10 h-14 flex items-center justify-between pt-1.5">
-      <div class="flex items-center gap-3">
-        <div class="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center shadow-md shadow-blue-500/30">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/>
-          </svg>
+  <!-- NAVBAR ESTILO SMOKE STUDIOS -->
+  <nav class="bg-black border-b border-zinc-900 flex-shrink-0 z-20">
+    <div class="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between">
+      <div class="flex items-center gap-2.5">
+        <div class="w-8 h-8 rounded-lg bg-[#00df82] flex items-center justify-center text-black font-black shadow-[0_0_15px_rgba(0,223,130,0.25)]">
+          ⚖️
         </div>
         <div>
-          <a href="#" class="text-lg sm:text-xl font-extrabold tracking-tight text-white flex items-center gap-1.5">
-            Ley Fácil <span class="text-blue-400">Ciudadana</span>
+          <a href="#" class="text-sm font-black tracking-tight text-white flex items-center gap-1">
+            Ley<span class="text-[#00df82]">Fácil</span>
+            <span class="text-[9px] font-mono text-zinc-500 uppercase tracking-widest ml-1">CIUDADANA</span>
           </a>
         </div>
+      </div>
+
+      <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-[#022116] border border-[#00df82]/30 text-[#00df82] text-[10px] font-mono font-bold">
+        <span class="w-1.5 h-1.5 rounded-full bg-[#00df82] animate-pulse"></span>
+        <span>MOTOR GEMINI + BCN CHILE</span>
       </div>
     </div>
   </nav>
 
-  <!-- ================= HERO ================= -->
-  <section class="bg-gradient-to-b from-chile-navy via-slate-900 to-slate-900 text-white pt-1 pb-4 px-4 flex-shrink-0">
-    <div class="max-w-4xl mx-auto text-center">
-      <!-- Título principal -->
-      <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight leading-tight pt-0">
-        Entiende tus derechos legales en Chile <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-300">con peras y manzanas</span>
-      </h1>
+  <!-- CONTENEDOR PRINCIPAL RESPONSIVE -->
+  <main class="flex-grow w-full max-w-6xl mx-auto p-3 sm:p-4 overflow-hidden flex flex-col">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-3 sm:gap-4 items-start h-full overflow-hidden">
       
-      <!-- Cajas de consulta rápida -->
-      <div class="mt-7 sm:mt-8 max-w-4xl mx-auto">
-        <div class="flex flex-wrap gap-3 justify-center">
-          <button onclick="handleQuickQuestion('despido')" class="bg-slate-800/90 hover:bg-blue-900/70 border border-slate-700 hover:border-blue-400 text-xs sm:text-sm text-slate-100 px-4 py-2 rounded-xl transition flex items-center gap-2 shadow-sm font-medium">
-            <span class="text-base">💼</span> <span>Despido y finiquito</span>
-          </button>
-          <button onclick="handleQuickQuestion('arriendo')" class="bg-slate-800/90 hover:bg-blue-900/70 border border-slate-700 hover:border-blue-400 text-xs sm:text-sm text-slate-100 px-4 py-2 rounded-xl transition flex items-center gap-2 shadow-sm font-medium">
-            <span class="text-base">🏠</span> <span>Mes de garantía</span>
-          </button>
-          <button onclick="handleQuickQuestion('pension')" class="bg-slate-800/90 hover:bg-blue-900/70 border border-slate-700 hover:border-blue-400 text-xs sm:text-sm text-slate-100 px-4 py-2 rounded-xl transition flex items-center gap-2 shadow-sm font-medium">
-            <span class="text-base">👶</span> <span>Pensión de alimentos</span>
-          </button>
-          <button onclick="handleQuickQuestion('sernac')" class="bg-slate-800/90 hover:bg-blue-900/70 border border-slate-700 hover:border-blue-400 text-xs sm:text-sm text-slate-100 px-4 py-2 rounded-xl transition flex items-center gap-2 shadow-sm font-medium">
-            <span class="text-base">🛍️</span> <span>Garantía SERNAC</span>
-          </button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= CHAT & SIDEBAR ================= -->
-  <main class="flex-grow w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 py-3.5 overflow-hidden">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-7 items-start h-full">
-      
-      <!-- CHAT INTERACTIVO (MANTIENE SU TAMAÑO) -->
-      <div class="lg:col-span-9 bg-white rounded-2xl shadow-xl border border-slate-200 flex flex-col overflow-hidden h-full">
+      <!-- COLUMNA CHAT (9 Cols en Desktop, Full en Móvil) -->
+      <div class="lg:col-span-9 bg-zinc-950 border border-zinc-900 rounded-2xl flex flex-col h-full overflow-hidden shadow-2xl relative">
         
-        <!-- Header Chat -->
-        <div class="bg-slate-900 text-white px-4 py-3 flex items-center justify-between border-b border-slate-800 flex-shrink-0">
+        <!-- Header del Chat -->
+        <div class="px-4 py-3 bg-black border-b border-zinc-900 flex items-center justify-between flex-shrink-0">
           <div class="flex items-center gap-2.5">
             <div class="relative">
-              <div class="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center font-bold text-white text-xs">⚖️</div>
-              <span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-emerald-500 border-2 border-slate-900 rounded-full"></span>
+              <div class="w-7 h-7 rounded-lg bg-[#022116] border border-[#00df82]/40 flex items-center justify-center text-[#00df82] text-xs">
+                ✦
+              </div>
             </div>
             <div>
-              <h2 class="text-xs sm:text-sm font-bold leading-tight">Asistente Ley Fácil</h2>
-              <p class="text-[10px] text-slate-400">Orientación jurídica conectada a Supabase</p>
+              <h2 class="text-xs font-bold text-white tracking-tight">Orientación Legal en Peras y Manzanas</h2>
+              <p class="text-[10px] font-mono text-zinc-500">Conectado a la base de 950+ artículos oficiales</p>
             </div>
           </div>
-          <button onclick="resetChat()" title="Reiniciar chat" class="text-xs text-slate-400 hover:text-white px-2 py-1 rounded hover:bg-slate-800 transition">
-            Limpiar Chat
+          <button onclick="resetChat()" class="text-[11px] font-mono text-zinc-500 hover:text-zinc-200 px-2 py-1 rounded bg-zinc-900 border border-zinc-800 transition">
+            Limpiar
+          </button>
+        </div>
+
+        <!-- Píldoras de Preguntas Frecuentes Táctiles -->
+        <div class="p-2.5 bg-black/60 border-b border-zinc-900 flex-shrink-0 flex gap-2 overflow-x-auto no-scrollbar">
+          <button onclick="handleQuickQuestion('despido')" class="px-3 py-1.5 rounded-lg bg-zinc-900 hover:bg-[#022116] border border-zinc-800 hover:border-[#00df82]/40 text-xs font-mono text-zinc-300 hover:text-[#00df82] whitespace-nowrap transition flex items-center gap-1.5">
+            <span>💼</span> <span>Despido & Finiquito</span>
+          </button>
+          <button onclick="handleQuickQuestion('arriendo')" class="px-3 py-1.5 rounded-lg bg-zinc-900 hover:bg-[#022116] border border-zinc-800 hover:border-[#00df82]/40 text-xs font-mono text-zinc-300 hover:text-[#00df82] whitespace-nowrap transition flex items-center gap-1.5">
+            <span>🏠</span> <span>Mes de Garantía</span>
+          </button>
+          <button onclick="handleQuickQuestion('pension')" class="px-3 py-1.5 rounded-lg bg-zinc-900 hover:bg-[#022116] border border-zinc-800 hover:border-[#00df82]/40 text-xs font-mono text-zinc-300 hover:text-[#00df82] whitespace-nowrap transition flex items-center gap-1.5">
+            <span>👶</span> <span>Pensión Alimentos</span>
+          </button>
+          <button onclick="handleQuickQuestion('sernac')" class="px-3 py-1.5 rounded-lg bg-zinc-900 hover:bg-[#022116] border border-zinc-800 hover:border-[#00df82]/40 text-xs font-mono text-zinc-300 hover:text-[#00df82] whitespace-nowrap transition flex items-center gap-1.5">
+            <span>🛍️</span> <span>Garantía SERNAC (6 meses)</span>
           </button>
         </div>
 
         <!-- Mensajes del Chat -->
-        <div id="chatMessages" class="flex-1 overflow-y-auto p-4 space-y-3 bg-slate-50/70">
-          <div class="flex gap-3 max-w-[90%] sm:max-w-[85%]">
-            <div class="w-7 h-7 rounded-full bg-blue-600 text-white flex-shrink-0 flex items-center justify-center text-xs font-bold shadow-sm">LF</div>
-            <div class="bg-white border border-slate-200 rounded-2xl rounded-tl-sm p-3.5 shadow-sm text-xs sm:text-sm text-slate-700 leading-relaxed break-words">
-              <p class="font-semibold text-slate-900 mb-1">¡Hola! Qué gusto saludarte.</p>
-              <p>Estoy conectado a la base legal de Chile para orientarte. Escríbeme tu duda laboral, de arriendo o del consumidor aquí abajo.</p>
+        <div id="chatMessages" class="flex-1 overflow-y-auto p-4 space-y-3.5 bg-black/80">
+          <div class="flex gap-2.5 max-w-[92%] sm:max-w-[85%]">
+            <div class="w-7 h-7 rounded-lg bg-[#00df82] text-black font-bold flex-shrink-0 flex items-center justify-center text-xs shadow-sm">
+              LF
+            </div>
+            <div class="bg-zinc-900 border border-zinc-800 rounded-2xl rounded-tl-sm p-3.5 text-xs sm:text-sm text-zinc-200 leading-relaxed space-y-1 shadow-sm">
+              <p class="font-bold text-white">¡Hola! Gusto en saludarte.</p>
+              <p class="text-zinc-400">Estoy conectado a la base legal de Chile para explicarte tus derechos sin rodeos ni enredos. Escríbeme abajo tu duda laboral, de arriendo o del consumidor.</p>
             </div>
           </div>
         </div>
 
-        <!-- Formulario de Entrada -->
-        <form id="chatForm" onsubmit="handleUserSubmit(event)" class="p-3 bg-white border-t border-slate-200 flex-shrink-0">
+        <!-- Input de Entrada Táctil -->
+        <form id="chatForm" onsubmit="handleUserSubmit(event)" class="p-3 bg-black border-t border-zinc-900 flex-shrink-0">
           <div class="flex gap-2">
             <input 
               type="text" 
               id="userInput" 
-              placeholder="Escribe tu consulta aquí (ej: me despidieron sin aviso)..." 
-              class="flex-1 bg-slate-100 border border-slate-300 rounded-xl px-3.5 py-2.5 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-blue-600 focus:bg-white text-slate-800 transition"
+              placeholder="Escribe tu consulta legal (ej: me despidieron sin aviso)..." 
+              class="flex-1 h-12 bg-zinc-950 border border-zinc-800 rounded-xl px-3.5 text-xs sm:text-sm text-white placeholder:text-zinc-600 focus:outline-none focus:border-[#00df82] transition-colors"
               autocomplete="off"
               required
             >
             <button 
               type="submit" 
               id="sendBtn"
-              class="bg-blue-600 hover:bg-blue-700 text-white font-medium px-4 py-2.5 rounded-xl transition flex items-center gap-1 shadow-md text-xs sm:text-sm flex-shrink-0">
-              <span>Preguntar</span>
+              class="h-12 bg-[#00df82] hover:bg-[#00c774] text-black font-black px-4 sm:px-5 rounded-xl transition flex items-center gap-1.5 text-xs font-mono shadow-[0_0_20px_rgba(0,223,130,0.25)] flex-shrink-0 active:scale-95">
+              <span>PREGUNTAR</span>
             </button>
           </div>
         </form>
       </div>
 
-      <!-- SIDEBAR: ENLACES OFICIALES (ALINEADO ARRIBA CON EL CHAT Y CORRIDO ~2 CM A LA DERECHA) -->
-      <aside class="hidden lg:flex lg:col-span-3 flex-col justify-start h-full lg:translate-x-7">
-        <div class="bg-white border border-slate-200 rounded-2xl p-4 shadow-sm w-full">
-          <h3 class="text-xs font-bold uppercase tracking-wider text-slate-600 mb-3 flex items-center gap-2">
-            <span class="w-2 rounded-full h-2 bg-blue-600"></span> Enlaces Oficiales
-          </h3>
-          <ul class="text-xs space-y-2 text-slate-700 font-semibold">
+      <!-- COLUMNA ENLACES OFICIALES (Desktop) -->
+      <aside class="hidden lg:flex lg:col-span-3 flex-col gap-3 h-full">
+        <div class="bg-zinc-950 border border-zinc-900 rounded-2xl p-4">
+          <span className="text-[10px] font-mono font-bold tracking-widest text-[#00df82] uppercase block mb-3">
+            01. PORTALES OFICIALES
+          </span>
+          <ul class="text-xs space-y-2 font-mono">
             <li>
-              <a href="https://www.bcn.cl/leyfacil" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-2.5 rounded-xl hover:bg-blue-50 border border-slate-100 group transition">
-                <span class="group-hover:text-blue-600">BCN — Ley Fácil</span>
-                <span class="text-slate-400 group-hover:text-blue-600 ml-1">↗</span>
+              <a href="https://www.bcn.cl/leyfacil" target="_blank" class="flex items-center justify-between p-2.5 rounded-xl bg-black border border-zinc-900 hover:border-[#00df82]/40 text-zinc-400 hover:text-white transition">
+                <span>BCN Ley Fácil</span>
+                <span class="text-[#00df82]">↗</span>
               </a>
             </li>
             <li>
-              <a href="https://www.dt.gob.cl" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-2.5 rounded-xl hover:bg-blue-50 border border-slate-100 group transition">
-                <span class="group-hover:text-blue-600">Dirección del Trabajo (DT)</span>
-                <span class="text-slate-400 group-hover:text-blue-600 ml-1">↗</span>
+              <a href="https://www.dt.gob.cl" target="_blank" class="flex items-center justify-between p-2.5 rounded-xl bg-black border border-zinc-900 hover:border-[#00df82]/40 text-zinc-400 hover:text-white transition">
+                <span>Dirección del Trabajo</span>
+                <span class="text-[#00df82]">↗</span>
               </a>
             </li>
             <li>
-              <a href="https://www.sernac.cl" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-2.5 rounded-xl hover:bg-blue-50 border border-slate-100 group transition">
-                <span class="group-hover:text-blue-600">SERNAC (Consumidor)</span>
-                <span class="text-slate-400 group-hover:text-blue-600 ml-1">↗</span>
+              <a href="https://www.sernac.cl" target="_blank" class="flex items-center justify-between p-2.5 rounded-xl bg-black border border-zinc-900 hover:border-[#00df82]/40 text-zinc-400 hover:text-white transition">
+                <span>SERNAC Reclamos</span>
+                <span class="text-[#00df82]">↗</span>
               </a>
             </li>
             <li>
-              <a href="https://www.pjud.cl" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-2.5 rounded-xl hover:bg-blue-50 border border-slate-100 group transition">
-                <span class="group-hover:text-blue-600">Poder Judicial (PJUD)</span>
-                <span class="text-slate-400 group-hover:text-blue-600 ml-1">↗</span>
+              <a href="https://www.pjud.cl" target="_blank" class="flex items-center justify-between p-2.5 rounded-xl bg-black border border-zinc-900 hover:border-[#00df82]/40 text-zinc-400 hover:text-white transition">
+                <span>Poder Judicial</span>
+                <span class="text-[#00df82]">↗</span>
               </a>
             </li>
           </ul>
+        </div>
+
+        <div class="bg-gradient-to-br from-[#042017] via-[#02130e] to-black border border-[#0b3826] rounded-2xl p-4 mt-auto">
+          <span class="text-[9px] font-mono font-bold text-[#00df82] uppercase tracking-wider block mb-1">
+            DESCARGO LEGAL
+          </span>
+          <p class="text-[11px] text-zinc-400 leading-snug">
+            Herramienta pedagógica ciudadana. No sustituye el patrocinio de un abogado habilitado.
+          </p>
         </div>
       </aside>
 
     </div>
   </main>
 
-  <!-- Script principal de la aplicación -->
   <script src="script.js"></script>
 </body>
 </html>
