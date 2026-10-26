@@ -1,0 +1,48 @@
+/* public/styles.css - Estilos complementarios Smoke Studios */
+:root {
+  color-scheme: dark;
+}
+
+/* Scrollbars discretas en modo oscuro */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1f1f23;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #27272a;
+}
+
+/* Ocultar barra de scroll en las píldoras de preguntas */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Animación fluida al aparecer los mensajes de Gemini */
+#chatMessages > div {
+  animation: fadeInMessage 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes fadeInMessage {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
